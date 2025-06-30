@@ -1,1 +1,0 @@
-Never declare array size at runtime, always declare it in compile time . If you don't know the actual for instace then give some random large number.
