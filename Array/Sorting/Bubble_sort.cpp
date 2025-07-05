@@ -1,4 +1,4 @@
-#include<vector>
+#include<bits/stdc++.h>
 using namespace std;
 void bubbleSort(vector<int>& arr, int n)
 {   
@@ -21,4 +21,12 @@ void bubbleSort(vector<int>& arr, int n)
             break;
         }
     }
+}
+int main(){
+    vector<int> arr = {10,8,15,2,1,7,8,21};
+    int n=8;
+    bubbleSort(arr,n);
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }cout<<endl;
 }
