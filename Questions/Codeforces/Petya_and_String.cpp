@@ -26,7 +26,6 @@ int main(){
     transform(word1.begin(), word1.end(), word1.begin(), :: tolower);
     transform(word2.begin(), word2.end(), word2.begin(), :: tolower);
     
-    
     if(string(word1)> string(word2)){
         cout<<"WORD1 > WORD2 ";
     }
