@@ -134,7 +134,7 @@ int main(){
 
     print(head);
 
-    tail->next = head->next->next->next;
+    tail->next = head->next;
 
     if(detectLoop(head)){
         cout<<"Using Mapping, Cycle is Present " <<endl;
