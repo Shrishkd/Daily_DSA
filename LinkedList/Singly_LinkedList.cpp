@@ -111,6 +111,25 @@ class Node{
         cout<< endl;
     }
 
+    bool isCircular(Node* head){
+
+        if(head==NULL){
+            return true;
+        }
+
+        Node* temp = head->next;
+
+        while(temp != NULL && temp!=head){
+            temp= temp->next;
+        }
+
+        if(temp == head){
+            return true;
+        }
+
+        return false;
+    }
+
 int main(){
 
     //Created a new node
@@ -137,9 +156,14 @@ int main(){
     cout<<"Head: " << head-> data<<endl;
     cout<<"Tail: " << tail-> data<<endl;
 
-    deleteNode(4, head);
-    print(head);
+    // deleteNode(4, head);
+    // print(head);
 
-
+    if(isCircular(tail)){
+        cout<<"List is Circular";
+    }
+    else{
+        cout<<"List is not circular";
+    }
     return 0;
 }
