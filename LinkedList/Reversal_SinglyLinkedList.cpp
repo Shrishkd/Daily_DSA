@@ -12,7 +12,7 @@ struct Node {
 //Funtion to reverse Linked List
 
 //APPROACH 1 : USING LOOP (ITERATION)
-/*Node* ReverseLinkedList (Node* head){
+/*  Node* ReverseLinkedList (Node* head){
 
     if(head == NULL || head-> next == NULL){
         return head;
@@ -69,6 +69,7 @@ void Print(Node* head){
     }
     cout<<endl;
 }
+
 
 //Function to create Sample Linked List
 
