@@ -7,7 +7,7 @@ int factorial (int n){
     }
 
     int SamllerProblem = factorial(n-1);
-    int BigProblem = n * SamllerProblem;
+    int BigProblem = n * factorial(n-1);
 
     return BigProblem;
 
