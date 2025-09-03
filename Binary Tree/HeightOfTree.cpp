@@ -3,30 +3,30 @@ using namespace std;
 
 //Create Binary Tree using recursion
 
-class node{
+class Node{
     public:
         int data;
-        node* left;
-        node* right;
+        Node* left;
+        Node* right;
 
-    node(int d){
+    Node(int d){
         this->data = d;
         this->left = NULL;
         this->right= NULL;
     }
 };
 
-node *growTree(node* root){
+Node *growTree(Node* root){
 
     cout<<"Enter data: "<<endl;
     int data;
     cin>>data;
-    root = new node(data);
-
 
     if(data==-1){
         return NULL;
     }
+
+    root = new Node(data);
 
     cout<<"Enter data for inserting left of "<<data<<endl;
     root->left = growTree(root->left);
@@ -38,11 +38,30 @@ node *growTree(node* root){
 
 }
 
+int height(Node* node){
+
+    //base case
+    if(node == NULL){
+        return 0;
+    }
+
+    int left = height(node->left);
+    int right = height(node->right);
+
+    int ans = max(left, right) + 1;
+
+    return ans;
+
+}
+
 int main(){
 
-    node* root = NULL;
-
+    Node* root = NULL;
     root = growTree(root);
+
+    int treeHeight = height(root);
+    cout<<"Height of tree: "<<treeHeight<<endl;
+
 
     // 12 8 5 -1 -1 11 -1 -1 18 -1 -1
 
