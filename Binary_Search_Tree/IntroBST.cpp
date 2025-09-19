@@ -151,8 +151,9 @@ int main(){
 
     // DELETION
     root = obj.deleteFromBST(root, 50);
+    cout<<endl;
 
-    cout<<"Printing the BST: "<<endl;
+    cout<<"Printing the BST after Deletion: "<<endl;
 
     obj.levelOrderTraversal(root); 
     
