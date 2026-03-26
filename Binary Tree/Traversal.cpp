@@ -60,7 +60,7 @@ void levelOrderTraversal(node *root){
 }
 
 
-//InOrder (LNR)
+//InOrder (Left Node - Center Node - Right node)
 void Inorder(node *root){
     
     //base case
@@ -72,7 +72,7 @@ void Inorder(node *root){
     cout<< root->data<<" ";
     Inorder(root->right);
 }
-//PreOrder  (NLR)
+//PreOrder  (Center Node - Left Node- Right Node)
 void PreOrder(node *root){
     //base case
     if(root==NULL){
@@ -83,7 +83,7 @@ void PreOrder(node *root){
     PreOrder(root->right);
 }
 
-//PostOrder (LRN)
+//PostOrder (Left Node - Right Node- Center Node)
 void PostOrder(node *root){
     //base case
     if(root == NULL){
