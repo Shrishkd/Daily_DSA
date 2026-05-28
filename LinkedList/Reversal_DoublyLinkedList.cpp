@@ -36,21 +36,43 @@ struct Node{
     //     return head;
     // }
 
-    // APPROACH 2: RECURSION
 
-    Node* reverseDLL(Node* head) {
-    if (head == NULL || head->next == NULL)
+//APPROACH 2
+
+Node* reverseDLL(Node* head)
+{   
+    if(head == NULL || head->next==NULL){
         return head;
+    }
 
-    Node* newHead = reverseDLL(head->next);
+    Node* back = NULL;
+    Node* curr = head;
 
-    head->next->next = head;
-    head->prev = head->next;
-    head->next = NULL;
-    
-    newHead->prev = NULL; 
-    return newHead;
+    while(curr!=NULL){
+
+        back = curr->prev;
+        curr->prev = curr->next;
+        curr->next= back;
+        curr = curr->prev;
+    }
+    return back->prev;
 }
+
+    // APPROACH 3: RECURSION
+
+//     Node* reverseDLL(Node* head) {
+//     if (head == NULL || head->next == NULL)
+//         return head;
+
+//     Node* newHead = reverseDLL(head->next);
+
+//     head->next->next = head;
+//     head->prev = head->next;
+//     head->next = NULL;
+    
+//     newHead->prev = NULL; 
+//     return newHead;
+// }
 Node* CreateSampleDoublyList() {
     // Create nodes
     Node* head = new Node(3);

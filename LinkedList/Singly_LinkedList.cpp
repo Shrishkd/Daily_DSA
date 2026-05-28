@@ -50,7 +50,7 @@ class Node{
         }
 
         Node* temp = head;
-        int cnt;
+        int cnt = 1;
 
         while(cnt < position-1){
             temp = temp->next;
@@ -69,7 +69,6 @@ class Node{
         
         nodeToinsert -> next = temp-> next;
         temp -> next = nodeToinsert;
-
     }
 
     void deleteNode(int position, Node* &head){

@@ -41,8 +41,9 @@ void reverse(Node* &head, Node* curr, Node* prev){
     }
 
     Node* forward = curr -> next;
-    reverse(head, forward, curr);
     curr -> next = prev;
+    reverse(head, forward, curr);
+    
 }
 
 //APPROACH 3: USING RECURSION
