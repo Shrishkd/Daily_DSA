@@ -2,6 +2,12 @@
 #include <map>
 #include <unordered_map>
 
+//Map and Hashmap is diffrent. map is ordered/sorted . Hashmap is unodered and have less 
+// Time Complexity  than Map.
+//          Time Complexity            Space Complexity
+//MAP:       O(log n)                      O(N)
+//Hashmap:   O(1)                          O(N)
+
 using namespace std;
 
 int main(){

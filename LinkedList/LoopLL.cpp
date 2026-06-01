@@ -70,6 +70,23 @@ bool SetDetectLoop(Node* head){
     return false;
 }
 
+bool floydDetectLoop(Node* head){
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow !=nullptr && fast != nullptr){
+        fast= fast->next;
+        if(fast != nullptr){
+            fast= fast->next;
+        }
+        slow= slow->next;
+        if(fast==slow)
+        return true;
+    }
+    return false;
+}
+
 int main() {
 
     /*kindly replace the function name to check loop in line 91 and 107 
