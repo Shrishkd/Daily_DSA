@@ -39,7 +39,7 @@ bool HshMapDetectLoop(Node* head){
 
     Node* temp = head;
 
-    while(temp != nullptr){
+    while(temp){
 
         if(visited[temp]){
             return true;
@@ -57,7 +57,7 @@ bool SetDetectLoop(Node* head){
 
     Node* temp = head;
 
-    while(temp != nullptr){
+    while(temp){
 
         if(visited.count(temp)){
             return true;
@@ -107,7 +107,7 @@ int main() {
 
     // Verify there is no loop yet
     cout << "Checking list before creating loop..." << endl;
-    if (MapDetectLoop(head)) {
+    if (HshMapDetectLoop(head)) {
         cout << "Result: Loop detected! ❌" << endl;
     } else {
         cout << "Result: No loop detected. Clean list!  " << endl;
