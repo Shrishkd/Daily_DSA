@@ -104,7 +104,7 @@ void print(Node* &head){
 
     Node* temp = head;
 
-    while(temp !=nullptr){
+    while(temp){
         cout<<temp -> data << " ";
         temp= temp->next;
     }
