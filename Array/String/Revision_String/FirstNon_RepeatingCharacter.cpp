@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 
-    string s = "aabbcdde"; 
+    string s = "zxyy"; 
 
     vector<int> freq(26,0);
 

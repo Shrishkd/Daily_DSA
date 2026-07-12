@@ -13,7 +13,7 @@ int main(){
     }
 
     int count = 1;
-    char ch;
+    char ch = 'a';
     for (int i =0; i<26; i++){
         if (freq[i] > count){
             count = freq[i];
