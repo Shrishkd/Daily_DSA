@@ -1,24 +1,32 @@
 // Longest Consecutive Character Block
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
+     string s = "aaabbbbccddd";
 
-    string s = "aaabbbbccddd";
+     char ansChar = s[0];
 
-    vector<int> freq (26,0);
+     int count = 1;
+     int maxlen = 1;
 
-    for(char c: s){
+     for(int i =1; i<s.length(); i++){
 
-        freq[c-'a']++;
-    }
-    int maxm = 0;
-    for(int i = 0; i<s.length(); i++){
-        maxm = max(maxm, freq[i]);
-    }
+        if(s[i]==s[i-1]){
+            count++;
+        }else{
+            if(count>maxlen){
+                maxlen=count;
+                ansChar = s[i-1];
+            }
+            count =1;
 
-    for(int i = 0; i<s.length(); i++){
-        if(freq[i] == maxm)
-            cout<<char(i+'a')<<" "<<maxm;
-    }
+        }
+     }
+     if(count>maxlen){
+        maxlen=count;
+        ansChar = s.back();
+     }
+
+     cout<<ansChar<<" "<<maxlen;
 }

@@ -5,18 +5,18 @@ using namespace std;
 
 int main(){
 
-    string s = "aaabbcccc";
+    string s = "aaabbccaacc";
 
-    vector<int> freq (26,0);
+    int count = 1;
 
-    for(char c:s){
-        freq[c-'a']++;
-    }
+    for(int i = 1; i<s.length(); i++){
+        if(s[i]==s[i-1]) count ++;
 
-    for (int i =0; i<26; i++){
-        if(freq[i] > 0){
-            cout<<char(i+'a')<<freq[i];
+        else{
+            cout<<s[i-1]<<count;
+            count=1;
         }
     }
+    cout<<s.back()<<count;
 
 }

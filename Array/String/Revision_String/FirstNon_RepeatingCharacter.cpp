@@ -12,9 +12,9 @@ int main(){
         freq[c-'a']++;
     }
 
-    for(int i =0 ; i<26; i++){
-        if(freq[i]==1){
-            cout << char(i + 'a');
+    for(char c:s){
+        if(freq[c-'a']==1){
+            cout << c;
             break;
         }else{
             continue;
