@@ -4,26 +4,25 @@ class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
         int n = matrix.size();
-        // Take transpose of the matrix
-        for(int i=0; i<n; i++){
-            for (int j= i+1; j<n; j++){
+
+        for(int i = 0; i<n; i++){
+            for(int j = i+1; j<n; j++){
                 swap(matrix[i][j], matrix[j][i]);
             }
         }
 
-        // Swapping the column
-
-        int j= 0,  top =0, bottom=n-1;
+        int j=0;
         while(j<n){
-            while(top<bottom){
-                swap(matrix[j][top], matrix[j][bottom]);
-                top++;
-                bottom++;
+            int left = 0;
+            int right = n-1;
+            while(left<=right){
+                swap(matrix[j][left], matrix[j][right]);
+                left++;
+                right--;
             }
-        j++;
+            j++;
         }
     }
-    
 };
 
     void printMatrix(const vector<vector<int>>& matrix) {
