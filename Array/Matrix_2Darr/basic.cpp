@@ -22,7 +22,7 @@ int main(){
     cout<<endl;
     
 
-    cout<<"Take input Column->rows:  "<<endl;
+    cout<<"Input Column->rows:  "<<endl;
 
     //Column->rows
     for(int col=0; col<4; col++){
