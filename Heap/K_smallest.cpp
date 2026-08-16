@@ -11,23 +11,32 @@ class Solution{
 
         priority_queue<int> pq;
 
-        //step1
-        for(int i=0; i<k; i++){
-            pq.push(arr[i]);
-        }
+        // //step1
+        // for(int i=0; i<k; i++){
+        //     pq.push(arr[i]);
+        // }
 
-        int r = arr.size()-1;
+        // int r = arr.size()-1;
 
-        //step2
-        for(int i = k ; i<=r; i++){
-            if(arr[i]< pq.top()){
+        // //step2
+        // for(int i = k ; i<=r; i++){
+        //     if(arr[i]< pq.top()){
+        //         pq.pop();
+        //         pq.push(arr[i]);
+        //     }
+        // }
+
+        // int ans = pq.top();
+        // return ans;
+
+        for(int num : arr){
+            pq.push(num);
+            if(pq.size()>k){
                 pq.pop();
-                pq.push(arr[i]);
-            }
+            } 
         }
 
-        int ans = pq.top();
-        return ans;
+        return pq.top();
     }
 };
  
