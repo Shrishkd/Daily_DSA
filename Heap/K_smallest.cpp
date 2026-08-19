@@ -6,7 +6,7 @@ class Solution{
 
     int kthSmallest(vector<int> &arr, int k){
 
-// we used max heap (priority_queue<int>) to find the smallest element, similarly we use min heap to find the largest element 
+// we used max heap (priority_queue<int>) to find the smallest element, similarly we use min heap (priority_queue(int, vector<int> , greater<int>>)) to find the largest element 
 
 
         priority_queue<int> pq;
