@@ -1,37 +1,72 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-string longestCommonPrefix(vector<string> &arr, int n)
+//OPTIMISED
+string longestCommonPrefix(vector<string>& arr, int n)
 {
-    string ans = "";
+    if (arr.empty())
+        return "";
 
-    //for traversing all character of first String
-    for(int i=0; i<arr[0].length(); i++){
+    sort(arr.begin(), arr.end());
 
-        char ch= arr[0][i];
-        bool match = true;
-    
+    string first = arr.front();
+    string last = arr.back();
 
-    //bool comparing ch with rest of the strings
-    for(int j=1; j<n; j++){
+    int i = 0;
 
-        //not match
-        if(arr[j].size() < i || ch !=arr[j][i]){
-            match = false;
-            break;
-        }
+    while (i < first.size() &&
+           i < last.size() &&
+           first[i] == last[i])
+    {
+        i++;
     }
-    if(match == false)
-        break;
-    else
-        ans.push_back(ch);
-    }
-    return ans;
+
+    return first.substr(0, i);
 }
- 
- 
-int main() {
- 
- 
-return 0;
+
+//BRUTE
+
+// string longestCommonPrefix(vector<string>& arr, int n)
+// {
+//     // If array is empty
+//     if (n == 0 || arr.empty())
+//         return "";
+
+//     string ans = "";
+
+//     // Traverse every character of the first string
+//     for (int i = 0; i < arr[0].size(); i++)
+//     {
+//         char ch = arr[0][i];
+//         bool match = true;
+
+//         // Compare this character with all other strings
+//         for (int j = 1; j < n; j++)
+//         {
+//             // If current string is too short
+//             // OR character does not match
+//             if (arr[j].size() <= i || arr[j][i] != ch)
+//             {
+//                 match = false;
+//                 break;
+//             }
+//         }
+
+//         // If character didn't match everywhere, stop
+//         if (!match)
+//             break;
+
+//         ans.push_back(ch);
+//     }
+
+//     return ans;
+// }
+
+int main()
+{
+    vector<string> arr = {"flower", "flow", "flight"};
+
+    cout << longestCommonPrefix(arr, arr.size()) << endl;
+
+    return 0;
 }
