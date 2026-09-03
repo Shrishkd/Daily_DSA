@@ -1,52 +1,43 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<climits>
 using namespace std;
 
-// This function returns the maximum product subarray
-// using prefix and suffix traversal
-class Solution {
+class Solution{
 public:
-    int maxProductSubArray(vector<int>& arr) {
-        // Store size of array
-        int n = arr.size();
 
-        // Initialize prefix and suffix product
-        int pre = 1, suff = 1;
+    int maxProduct(vector<int>&nums){
 
-        // Initialize answer to negative infinity
+        int n = nums.size();
         int ans = INT_MIN;
 
-        // Traverse from both left and right
-        for (int i = 0; i < n; i++) {
-            // Reset prefix if zero
-            if (pre == 0) pre = 1;
+        int pref = 1, suff = 1;
 
-            // Reset suffix if zero
-            if (suff == 0) suff = 1;
+        for(int i = 0; i<n; i++){
 
-            // Multiply prefix with current element from front
-            pre *= arr[i];
+            if(pref==0) pref=1;
 
-            // Multiply suffix with current element from back
-            suff *= arr[n - i - 1];
+            if(suff==0) suff=1;
 
-            // Update the maximum of all products seen so far
-            ans = max(ans, max(pre, suff));
+            pref*=nums[i];
+
+            suff*=nums[n-i-1];
+
+            ans = max(ans, max(pref, suff));
         }
-
-        // Return the final answer
         return ans;
     }
 };
 
-int main() {
-    // Sample input
-    vector<int> arr = {2, 3, -2, 4};
+int main(){
 
-    // Create object of solution
+    vector<int> nums = {1,0,-5,2,3,-8,-9};
+
     Solution obj;
 
-    // Call the function and print the result
-    cout << obj.maxProductSubArray(arr) << endl;
+    int ans = obj.maxProduct(nums);
 
-    return 0;
+    cout<<ans;
+
+    return ans;
 }
