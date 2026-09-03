@@ -47,10 +47,6 @@ int main(){
         ans.push_back(ans[x]);
         cout<<ans[x]<<" ";
     }
-
-
     
-
-
     return 0;
 }
